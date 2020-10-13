@@ -6,7 +6,9 @@ SELECT * FROM actor WHERE last_name = 'Johansson'
 -- 3. How many films (movies) are available for rent?
 SELECT COUNT(DISTINCT film_id) FROM inventory
 -- 4. How many films have been rented?
+SELECT COUNT(DISTINCT rental_id) FROM payment
 -- 5. What is the shortest and longest rental period?
+SELECT max(DATEDIFF(return_date, rental_date)) as max_period, min(DATEDIFF(return_date, rental_date)) as min_period  FROM rental;
 -- 6. What are the shortest and longest movie duration? Name the values `max_duration` and `min_duration`.
 -- 7. What's the average movie duration?
 -- 8. What's the average movie duration expressed in format (hours, minutes)?
