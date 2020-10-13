@@ -17,5 +17,5 @@ SELECT AVG(length) as average_duration FROM film
 -- 9. How many movies longer than 3 hours?
 SELECT * FROM film WHERE 'length' > 180
 -- 10. Get the name and email formatted. Example: Mary SMITH - *mary.smith@sakilacustomer.org*.
-SELECT CONCAT(first_name, ' ',  last_name, ' - ', LOWER(email)) as customer_formatted FROM customer 
+SELECT CONCAT(LEFT(first_name, 1), LOWER(SUBSTRING(first_name, 2)), ' ',  last_name, ' - ', LOWER(email)) as customer_formatted FROM customer 
 -- 11. What's the length of the longest film title?
